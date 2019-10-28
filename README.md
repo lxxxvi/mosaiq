@@ -1,8 +1,8 @@
+[![Build Status](https://travis-ci.org/lxxxvi/mosaiq.svg?branch=master)](https://travis-ci.org/lxxxvi/mosaiq)
+
 # Mosaiq
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/mosaiq`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Mosaiq creates images with randomly colored pixels.
 
 ## Installation
 
@@ -22,11 +22,30 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Currently only SVG is supported.
+
+### SVG
+
+```ruby
+mosaiq = Mosaiq::Image.new(3, 4, %w[red blue green])
+puts mosaiq.svg
+# => <?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"> <svg width="100%" height="100%" viewBox="0 0 4 3" version="1.1" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="1" height="1" style="fill: blue;"/><rect x="0" y="1" width="1" height="1" style="fill: green;"/><rect x="0" y="2" width="1" height="1" style="fill: red;"/><rect x="1" y="0" width="1" height="1" style="fill: red;"/><rect x="1" y="1" width="1" height="1" style="fill: red;"/><rect x="1" y="2" width="1" height="1" style="fill: red;"/><rect x="2" y="0" width="1" height="1" style="fill: blue;"/><rect x="2" y="1" width="1" height="1" style="fill: blue;"/><rect x="2" y="2" width="1" height="1" style="fill: red;"/><rect x="3" y="0" width="1" height="1" style="fill: red;"/><rect x="3" y="1" width="1" height="1" style="fill: blue;"/><rect x="3" y="2" width="1" height="1" style="fill: red;"/></svg>
+```
+
+which looks like this when saved to a file
+
+![Example mosaiq](./documentation/example.svg)
+
+
+
+* The first argument is the `width` of the image.
+* The second argument is the `height` of the image.
+* The third argument is an array of color names. Any HTML valid color names will do.
+
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
