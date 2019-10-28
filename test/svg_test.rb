@@ -12,7 +12,7 @@ class SvgTest < Minitest::Test
 
     rect_elements(nhtml).tap do |rects|
       assert_equal 12, rects.count
-      assert_attributes(x: '2', y: '0', width: '1', height: '1', style: 'fill: notreal;', element: rects[0])
+      assert_attributes(x: '0', y: '0', width: '1', height: '1', style: 'fill: notreal;', element: rects[0])
     end
   end
 
