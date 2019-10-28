@@ -1,6 +1,7 @@
 require 'mosaiq/version'
 require 'mosaiq/image'
+require 'mosaiq/errors'
 
 module Mosaiq
-  class Error < StandardError; end
+  include Errors
 end
