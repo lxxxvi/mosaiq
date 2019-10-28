@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
 class MosaiqTest < Minitest::Test
@@ -6,30 +8,22 @@ class MosaiqTest < Minitest::Test
   end
 
   def test_invalid_width
-    error = assert_raises(Mosaiq::InvalidDimensionArgument) do
-      Mosaiq::Image.new(0, 1)
-    end
-
-    assert_equal "Argument 'width' cannot be '0'. Please provide a number greater than 0.",
-                 error.message
+    error = assert_raises(Mosaiq::InvalidDimensionArgument) { Mosaiq::Image.new(0, 1) }
+    assert_equal "Argument 'width' cannot be '0'. Please provide a number greater than 0.", error.message
   end
 
   def test_invalid_height
-    error = assert_raises(Mosaiq::InvalidDimensionArgument) do
-      Mosaiq::Image.new(1, 0)
-    end
-
-    assert_equal "Argument 'height' cannot be '0'. Please provide a number greater than 0.",
-                 error.message
+    error = assert_raises(Mosaiq::InvalidDimensionArgument) { Mosaiq::Image.new(1, 0) }
+    assert_equal "Argument 'height' cannot be '0'. Please provide a number greater than 0.", error.message
   end
 
   def test_width_nil
-    error = assert_raises(Mosaiq::InvalidDimensionArgument) do
-      Mosaiq::Image.new(nil, 1)
-    end
+    error = assert_raises(Mosaiq::InvalidDimensionArgument) { Mosaiq::Image.new(nil, 1) }
+    assert_equal "Argument 'width' cannot be 'nil'. Please provide a number greater than 0.", error.message
+  end
 
-    assert_equal "Argument 'width' cannot be 'nil'. Please provide a number greater than 0.",
-                 error.message
-
+  def test_empty_colors
+    error = assert_raises(Mosaiq::InvalidColorsArgument) { Mosaiq::Image.new(1, 1, []) }
+    assert_equal "Argument 'colors' should not be empty. Please provide an array with color names.", error.message
   end
 end

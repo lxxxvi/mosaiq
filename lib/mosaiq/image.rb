@@ -1,11 +1,14 @@
+# frozen_string_literal: true
+
 require 'mosaiq/svg'
 
 module Mosaiq
+  # Main class to create a Mosaiq Image
   class Image
     def initialize(width, height, colors = %w[fff 000])
       @width = read_positive_integer(width: width)
       @height = read_positive_integer(height: height)
-      @colors = Array(colors)
+      @colors = read_colors(colors)
 
       build_canvas
     end
@@ -25,9 +28,15 @@ module Mosaiq
     def read_positive_integer(args = {})
       key, value = args.first
       integer_value = value.to_i
-      return integer_value if integer_value > 0
+      return integer_value if integer_value.positive?
 
       raise Mosaiq::InvalidDimensionArgument.new(key, value)
+    end
+
+    def read_colors(colors)
+      return colors unless colors.empty?
+
+      raise Mosaiq::InvalidColorsArgument
     end
   end
 end
