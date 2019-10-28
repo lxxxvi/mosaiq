@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module Mosaiq
+  # Generate SVG version of the Mosaiq
   class Svg
     def initialize(canvas)
       @canvas = canvas
@@ -7,13 +10,13 @@ module Mosaiq
     end
 
     def generate
-      %Q(#{svg_header} #{svg_body}).tr("\n", '').gsub(/ +/, ' ')
+      %(#{svg_header} #{svg_body}).tr("\n", '').gsub(/ +/, ' ')
     end
 
     private
 
     def svg_header
-      %Q(<?xml version="1.0" encoding="UTF-8"?>
+      %(<?xml version="1.0" encoding="UTF-8"?>
          <!DOCTYPE svg
                    PUBLIC
                    "-//W3C//DTD SVG 1.1//EN"
@@ -21,7 +24,7 @@ module Mosaiq
     end
 
     def svg_body
-      %Q(<svg width="100%"
+      %(<svg width="100%"
               height="100%"
               viewBox="0 0 #{@width} #{@height}"
               version="1.1"
@@ -36,9 +39,9 @@ module Mosaiq
       end
     end
 
-    def svg_rectangle(x, y, color)
-      %Q(<rect x="#{x}"
-               y="#{y}"
+    def svg_rectangle(x_coordinates, y_coordinates, color)
+      %(<rect x="#{x_coordinates}"
+               y="#{y_coordinates}"
                width="1"
                height="1"
                style="fill: #{color};"/>)
