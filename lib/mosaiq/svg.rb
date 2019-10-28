@@ -32,8 +32,8 @@ module Mosaiq
     end
 
     def svg_rectangles
-      @canvas.each_with_index.map do |row, x|
-        row.each_with_index.map do |color, y|
+      @canvas.each_with_index.map do |row, y|
+        row.each_with_index.map do |color, x|
           svg_rectangle(x, y, color)
         end
       end
