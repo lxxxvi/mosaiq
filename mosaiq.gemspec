@@ -10,8 +10,8 @@ Gem::Specification.new do |spec|
   spec.authors = ['lxxxvi']
   spec.email = ['lxxxvi@users.noreply.github.com']
 
-  spec.summary = 'Mosaiq summary'
-  spec.description = 'Mosaiq description'
+  spec.summary = 'Mosaiq generates images of randomly colored pixels'
+  spec.description = spec.summary
   spec.homepage = 'https://github.com/lxxxvi/mosaiq'
   spec.license = 'MIT'
 
