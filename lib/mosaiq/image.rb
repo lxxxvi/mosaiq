@@ -5,7 +5,7 @@ require 'mosaiq/svg'
 module Mosaiq
   # Main class to create a Mosaiq Image
   class Image
-    def initialize(width, height, colors = %w[fff 000])
+    def initialize(width, height, colors = Palette.black_and_white)
       @width = read_positive_integer(width: width)
       @height = read_positive_integer(height: height)
       @colors = read_colors(colors)

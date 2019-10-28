@@ -27,20 +27,30 @@ Currently only SVG is supported.
 ### SVG
 
 ```ruby
-mosaiq = Mosaiq::Image.new(3, 4, %w[red blue green])
+mosaiq = Mosaiq::Image.new(3, 4, %w[red green blue])
 puts mosaiq.svg
 # => <?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"> <svg width="100%" height="100%" viewBox="0 0 4 3" version="1.1" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="1" height="1" style="fill: blue;"/><rect x="0" y="1" width="1" height="1" style="fill: green;"/><rect x="0" y="2" width="1" height="1" style="fill: red;"/><rect x="1" y="0" width="1" height="1" style="fill: red;"/><rect x="1" y="1" width="1" height="1" style="fill: red;"/><rect x="1" y="2" width="1" height="1" style="fill: red;"/><rect x="2" y="0" width="1" height="1" style="fill: blue;"/><rect x="2" y="1" width="1" height="1" style="fill: blue;"/><rect x="2" y="2" width="1" height="1" style="fill: red;"/><rect x="3" y="0" width="1" height="1" style="fill: red;"/><rect x="3" y="1" width="1" height="1" style="fill: blue;"/><rect x="3" y="2" width="1" height="1" style="fill: red;"/></svg>
 ```
 
 which looks like this when saved to a file
 
-![Example mosaiq](./documentation/example.svg)
-
-
+| Result                                                        |
+|---------------------------------------------------------------|
+| ![Example mosaiq](./documentation/example_red_green_blue.svg) |
 
 * The first argument is the `width` of the image.
 * The second argument is the `height` of the image.
-* The third argument is an array of color names. Any HTML valid color names will do.
+* The third argument is an array of color names. Any valid HTML color names will do.
+
+## Palette
+
+There are three predefined "Palettes" of colors:
+
+| Palette            | Example                                                       | Result                                                                  |
+|--------------------|---------------------------------------------------------------|-------------------------------------------------------------------------|
+| `black_and_white`  | `Mosaiq::Image.new(10, 5, Mosaiq::Palette::black_and_white)`  | ![Example black_and_white](./documentation/example_black_and_white.svg) |
+| `grays`            | `Mosaiq::Image.new(10, 5, Mosaiq::Palette::grays)`            | ![Example grays](./documentation/example_grays.svg)                     |
+| `random_colors(n)` | `Mosaiq::Image.new(10, 5, Mosaiq::Palette::random_colors(8))` | ![Example random_colors](./documentation/example_random_colors_8.svg)   |
 
 
 ## Development
