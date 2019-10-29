@@ -1,4 +1,6 @@
 [![Build Status](https://travis-ci.org/lxxxvi/mosaiq.svg?branch=master)](https://travis-ci.org/lxxxvi/mosaiq)
+[![Maintainability](https://api.codeclimate.com/v1/badges/b78dd888a84f07d25867/maintainability)](https://codeclimate.com/github/lxxxvi/mosaiq/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/b78dd888a84f07d25867/test_coverage)](https://codeclimate.com/github/lxxxvi/mosaiq/test_coverage)
 
 # Mosaiq
 
