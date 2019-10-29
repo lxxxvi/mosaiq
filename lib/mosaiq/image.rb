@@ -14,7 +14,7 @@ module Mosaiq
     end
 
     def svg
-      Mosaiq::Svg.new(@canvas).generate
+      Mosaiq::Svg.new(@canvas)
     end
 
     private

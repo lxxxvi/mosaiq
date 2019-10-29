@@ -25,7 +25,7 @@ Or install it yourself as:
 Base usage:
 
 ```ruby
-mosaiq = Mosaiq::Image.new(width: 3, height: 4, colors: %w[red green blue])
+image = Mosaiq::Image.new(width: 3, height: 4, colors: %w[red green blue])
 ```
 
 * Unit of `width` and `height` is pixels
@@ -37,7 +37,7 @@ mosaiq = Mosaiq::Image.new(width: 3, height: 4, colors: %w[red green blue])
 Currently only SVG is supported.
 
 ```ruby
-puts mosaiq.svg
+puts image.svg.raw
 # => <?xml version="1.0" encoding="UTF-8"?> ...
 ```
 
