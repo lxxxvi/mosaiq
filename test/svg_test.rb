@@ -5,7 +5,7 @@ require 'nokogiri'
 
 class SvgTest < Minitest::Test
   def test_generate
-    svg = Mosaiq::Image.new(width: 4, height: 3, colors: ['notreal']).svg
+    svg = Mosaiq::Image.new(width: 4, height: 3, colors: ['notreal']).svg.raw
     nhtml = Nokogiri::XML(svg)
 
     assert_attributes(viewBox: '0 0 4 3', element: svg_element(nhtml))
