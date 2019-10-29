@@ -22,14 +22,23 @@ Or install it yourself as:
 
 ## Usage
 
-Currently only SVG is supported.
-
-### SVG
+Base usage:
 
 ```ruby
 mosaiq = Mosaiq::Image.new(width: 3, height: 4, colors: %w[red green blue])
+```
+
+* Unit of `width` and `height` is pixels
+* `colors` is an `Array` of color names. Any valid HTML color will work. There are also predefined color "Palettes", [see below](#palette).
+
+
+### SVG
+
+Currently only SVG is supported.
+
+```ruby
 puts mosaiq.svg
-# => <?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"> <svg width="100%" height="100%" viewBox="0 0 4 3" version="1.1" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="1" height="1" style="fill: blue;"/><rect x="0" y="1" width="1" height="1" style="fill: green;"/><rect x="0" y="2" width="1" height="1" style="fill: red;"/><rect x="1" y="0" width="1" height="1" style="fill: red;"/><rect x="1" y="1" width="1" height="1" style="fill: red;"/><rect x="1" y="2" width="1" height="1" style="fill: red;"/><rect x="2" y="0" width="1" height="1" style="fill: blue;"/><rect x="2" y="1" width="1" height="1" style="fill: blue;"/><rect x="2" y="2" width="1" height="1" style="fill: red;"/><rect x="3" y="0" width="1" height="1" style="fill: red;"/><rect x="3" y="1" width="1" height="1" style="fill: blue;"/><rect x="3" y="2" width="1" height="1" style="fill: red;"/></svg>
+# => <?xml version="1.0" encoding="UTF-8"?> ...
 ```
 
 which looks like this when saved to a file
@@ -58,7 +67,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/mosaiq. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/lxxxvi/mosaiq. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
