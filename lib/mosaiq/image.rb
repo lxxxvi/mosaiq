@@ -5,10 +5,12 @@ require 'mosaiq/svg'
 module Mosaiq
   # Main class to create a Mosaiq Image
   class Image
-    def initialize(width:, height:, colors: Palette.black_and_white)
+    attr_reader :canvas
+
+    def initialize(width:, height:, palette: Palette.black_and_white)
       @width = read_positive_integer(width: width)
       @height = read_positive_integer(height: height)
-      @colors = read_colors(colors)
+      @palette = read_palette(palette)
 
       build_canvas
     end
@@ -21,7 +23,7 @@ module Mosaiq
 
     def build_canvas
       total = @width * @height
-      all_tiles = Array.new(total).map { @colors.sample }
+      all_tiles = Array.new(total).map { @palette.sample }
       @canvas = all_tiles.each_slice(@width).collect(&:itself)
     end
 
@@ -33,10 +35,10 @@ module Mosaiq
       raise Mosaiq::InvalidDimensionArgument.new(key, value)
     end
 
-    def read_colors(colors)
-      return colors unless colors.empty?
+    def read_palette(palette)
+      return palette unless palette.empty?
 
-      raise Mosaiq::InvalidColorsArgument
+      raise Mosaiq::InvalidPaletteArgument
     end
   end
 end

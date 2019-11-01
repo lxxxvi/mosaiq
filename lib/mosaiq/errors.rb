@@ -9,10 +9,10 @@ module Errors
     end
   end
 
-  # Raised when colors argument is empty
-  class InvalidColorsArgument < StandardError
+  # Raised when palette argument is empty
+  class InvalidPaletteArgument < StandardError
     def initialize
-      super "Argument 'colors' should not be empty. Please provide an array with color names."
+      super "Argument 'palette' should not be empty. Please provide an array with color names."
     end
   end
 end

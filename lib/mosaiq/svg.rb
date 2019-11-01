@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'base64'
+
 module Mosaiq
   # Generate SVG version of the Mosaiq
   class Svg
@@ -10,14 +12,25 @@ module Mosaiq
     end
 
     def raw
-      %(#{svg_header} #{svg_body}).tr("\n", '').gsub(/ +/, ' ')
+      %(#{svg_header}#{svg_body}).delete("\n").gsub(/ +/, ' ')
+    end
+
+    def to_base64
+      Base64.encode64(raw).delete("\n")
     end
 
     private
 
     def svg_header
-      %(<?xml version="1.0" encoding="UTF-8"?>
-        <!DOCTYPE svg
+      "#{svg_header_xml}#{svg_header_doctype}"
+    end
+
+    def svg_header_xml
+      %(<?xml version="1.0" encoding="UTF-8"?>)
+    end
+
+    def svg_header_doctype
+      %(<!DOCTYPE svg
                   PUBLIC
                   "-//W3C//DTD SVG 1.1//EN"
                   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">)

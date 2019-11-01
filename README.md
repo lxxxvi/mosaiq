@@ -27,11 +27,11 @@ Or install it yourself as:
 Base usage:
 
 ```ruby
-image = Mosaiq::Image.new(width: 3, height: 4, colors: %w[red green blue])
+image = Mosaiq::Image.new(width: 3, height: 4, palette: %w[red green blue])
 ```
 
 * Unit of `width` and `height` is pixels
-* `colors` is an `Array` of color names. Any valid HTML color will work. There are also predefined color "Palettes", [see below](#palette).
+* `palette` is an `Array` of color names. Any valid HTML color will work. There are also [predefined Palettes](#palette).
 
 
 ### SVG
@@ -52,13 +52,13 @@ which looks like this when saved to a file
 
 ## Palette
 
-There are three predefined "Palettes" of colors:
+There are three predefined Palettes:
 
 | Palette            | Example                                                                              | Result                                                                  |
 |--------------------|--------------------------------------------------------------------------------------|-------------------------------------------------------------------------|
-| `black_and_white`  | `Mosaiq::Image.new(width: 10, height: 5, colors: Mosaiq::Palette::black_and_white)`  | ![Example black_and_white](./documentation/example_black_and_white.svg) |
-| `grays`            | `Mosaiq::Image.new(width: 10, height: 5, colors: Mosaiq::Palette::grays)`            | ![Example grays](./documentation/example_grays.svg)                     |
-| `random_colors(n)` | `Mosaiq::Image.new(width: 10, height: 5, colors: Mosaiq::Palette::random_colors(8))` | ![Example random_colors](./documentation/example_random_colors_8.svg)   |
+| `black_and_white`  | `Mosaiq::Image.new(width: 10, height: 5, palette: Mosaiq::Palette::black_and_white)`  | ![Example black_and_white](./documentation/example_black_and_white.svg) |
+| `grays`            | `Mosaiq::Image.new(width: 10, height: 5, palette: Mosaiq::Palette::grays)`            | ![Example grays](./documentation/example_grays.svg)                     |
+| `random_colors(n)` | `Mosaiq::Image.new(width: 10, height: 5, palette: Mosaiq::Palette::random_colors(8))` | ![Example random_colors](./documentation/example_random_colors_8.svg)   |
 
 
 ## Development
