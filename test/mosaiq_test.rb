@@ -22,8 +22,12 @@ class MosaiqTest < Minitest::Test
     assert_equal "Argument 'width' cannot be 'nil'. Please provide a number greater than 0.", error.message
   end
 
-  def test_empty_colors
-    error = assert_raises(Mosaiq::InvalidColorsArgument) { Mosaiq::Image.new(width: 1, height: 1, colors: []) }
-    assert_equal "Argument 'colors' should not be empty. Please provide an array with color names.", error.message
+  def test_empty_palette
+    error = assert_raises(Mosaiq::InvalidPaletteArgument) { Mosaiq::Image.new(width: 1, height: 1, palette: []) }
+    assert_equal "Argument 'palette' should not be empty. Please provide an array with color names.", error.message
+  end
+
+  def test_randomized_pixels
+    mosaiq = Mosaiq::Image.new(width: 100, height: 1, palette: Mosaiq::Palette.grays)
   end
 end

@@ -1,30 +1,17 @@
 # frozen_string_literal: true
 
 require 'test_helper'
-require 'nokogiri'
 
 class SvgTest < Minitest::Test
   include Fixtures
 
-  def test_raw_1x1
-    svg = Mosaiq::Image.new(width: 1, height: 1, colors: ['#fff']).svg
-    assert_equal read_fixture('1x1_fff.svg').chop, svg.raw
-  end
-
-  def test_raw_4x3
-    svg = Mosaiq::Image.new(width: 4, height: 3, colors: ['#fff']).svg
-    nhtml = Nokogiri::XML(svg.raw)
-
-    assert_attributes(viewBox: '0 0 4 3', element: svg_element(nhtml))
-
-    rect_elements(nhtml).tap do |rects|
-      assert_equal 12, rects.count
-      assert_attributes(x: '0', y: '0', width: '1', height: '1', style: 'fill: #fff;', element: rects[0])
-    end
+  def test_raw
+    svg = Mosaiq::Image.new(width: 2, height: 3, palette: ['#fff']).svg
+    assert_equal read_fixture('2x3_fff.svg').chop, svg.raw
   end
 
   def test_to_base64
-    svg = Mosaiq::Image.new(width: 1, height: 1, colors: ['#fff']).svg
+    svg = Mosaiq::Image.new(width: 1, height: 1, palette: ['#fff']).svg
     assert_equal read_fixture('1x1_fff_base64.txt').chop, svg.to_base64
   end
 
