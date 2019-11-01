@@ -28,6 +28,7 @@ class MosaiqTest < Minitest::Test
   end
 
   def test_randomized_pixels
-    mosaiq = Mosaiq::Image.new(width: 100, height: 1, palette: Mosaiq::Palette.grays)
+    image = Mosaiq::Image.new(width: 100, height: 1, palette: Mosaiq::Palette.random_colors(10_000))
+    assert image.canvas.flatten.uniq.size.positive?, 'There should be more than one different pixels'
   end
 end

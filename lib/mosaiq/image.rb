@@ -5,6 +5,8 @@ require 'mosaiq/svg'
 module Mosaiq
   # Main class to create a Mosaiq Image
   class Image
+    attr_reader :canvas
+
     def initialize(width:, height:, palette: Palette.black_and_white)
       @width = read_positive_integer(width: width)
       @height = read_positive_integer(height: height)
