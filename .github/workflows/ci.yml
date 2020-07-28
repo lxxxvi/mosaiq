@@ -5,8 +5,8 @@ name: Continuous Integration
 on: [push,pull_request]
 
 jobs:
-  bundle_install:
-    name: Setup Ruby and bundle install
+  test:
+    name: Run bin/test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
