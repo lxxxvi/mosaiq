@@ -2,7 +2,7 @@ env:
   RUBY_VERSION: 2.7
 
 name: Continuous Integration
-on: [push,pull_request]
+on: [pull_request]
 
 jobs:
   test:
