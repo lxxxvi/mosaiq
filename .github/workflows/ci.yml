@@ -20,6 +20,7 @@ jobs:
         with:
           path: vendor/bundle
           key: ${{ runner.os }}-gems-blabla
+
           # key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
 
       - name: Bundle install
