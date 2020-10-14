@@ -1,7 +1,21 @@
+---
+
+Layout/BeginEndAlignment:
+  Enabled: true
+
 Layout/EmptyLinesAroundAttributeAccessor:
   Enabled: true
 
+Layout/LineLength:
+  Max: 120
+
 Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+
+Lint/BinaryOperatorWithIdenticalOperands:
+  Enabled: true
+
+Lint/ConstantDefinitionInBlock:
   Enabled: true
 
 Lint/DeprecatedOpenSSLConstant:
@@ -10,17 +24,62 @@ Lint/DeprecatedOpenSSLConstant:
 Lint/DuplicateElsifCondition:
   Enabled: true
 
+Lint/DuplicateRequire:
+  Enabled: true
+
+Lint/DuplicateRescueException:
+  Enabled: true
+
+Lint/EmptyConditionalBody:
+  Enabled: true
+
+Lint/EmptyFile:
+  Enabled: true
+
+Lint/FloatComparison:
+  Enabled: true
+
+Lint/HashCompareByIdentity:
+  Enabled: true
+
+Lint/IdentityComparison:
+  Enabled: true
+
+Lint/MissingSuper:
+  Enabled: true
+
 Lint/MixedRegexpCaptureTypes:
+  Enabled: true
+
+Lint/OutOfRangeRegexpRef:
   Enabled: true
 
 Lint/RaiseException:
   Enabled: true
 
+Lint/RedundantSafeNavigation:
+  Enabled: true
+
+Lint/SelfAssignment:
+  Enabled: true
+
 Lint/StructNewOverride:
   Enabled: true
 
-Layout/LineLength:
-  Max: 120
+Lint/TopLevelReturnWithArgument:
+  Enabled: true
+
+Lint/TrailingCommaInAttributeDeclaration:
+  Enabled: true
+
+Lint/UnreachableLoop:
+  Enabled: true
+
+Lint/UselessMethodDefinition:
+  Enabled: true
+
+Lint/UselessTimes:
+  Enabled: true
 
 Style/AccessorGrouping:
   Enabled: true
@@ -34,7 +93,19 @@ Style/BisectedAttrAccessor:
 Style/CaseLikeIf:
   Enabled: true
 
+Style/ClassEqualityComparison:
+  Enabled: true
+
+Style/CombinableLoops:
+  Enabled: true
+
+Style/ExplicitBlockArgument:
+  Enabled: true
+
 Style/ExponentialNotation:
+  Enabled: true
+
+Style/GlobalStdStream:
   Enabled: true
 
 Style/HashAsLastArrayItem:
@@ -52,6 +123,12 @@ Style/HashTransformKeys:
 Style/HashTransformValues:
   Enabled: true
 
+Style/KeywordParametersOrder:
+  Enabled: true
+
+Style/OptionalBooleanParameter:
+  Enabled: true
+
 Style/RedundantAssignment:
   Enabled: true
 
@@ -67,5 +144,17 @@ Style/RedundantRegexpCharacterClass:
 Style/RedundantRegexpEscape:
   Enabled: true
 
+Style/RedundantSelfAssignment:
+  Enabled: true
+
+Style/SingleArgumentDig:
+  Enabled: true
+
 Style/SlicingWithRange:
+  Enabled: true
+
+Style/SoleNestedConditional:
+  Enabled: true
+
+Style/StringConcatenation:
   Enabled: true
